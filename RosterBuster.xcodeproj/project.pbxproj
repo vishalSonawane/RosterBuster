@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3F8EEF517D9799F45BBE21 /* Pods_RosterBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B82A59752053165CA6BB8CC /* Pods_RosterBuster.framework */; };
 		C9157615234F895D005251CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157614234F895D005251CF /* AppDelegate.swift */; };
 		C9157617234F895D005251CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157616234F895D005251CF /* SceneDelegate.swift */; };
 		C9157619234F895D005251CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157618234F895D005251CF /* ViewController.swift */; };
 		C915761C234F895D005251CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C915761A234F895D005251CF /* Main.storyboard */; };
 		C915761E234F895F005251CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C915761D234F895F005251CF /* Assets.xcassets */; };
 		C9157621234F895F005251CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C915761F234F895F005251CF /* LaunchScreen.storyboard */; };
+		C915762F234F8A60005251CF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915762E234F8A60005251CF /* Event.swift */; };
+		C9157635234F9674005251CF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157634234F9674005251CF /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B82A59752053165CA6BB8CC /* Pods_RosterBuster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RosterBuster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30EA4F68847E055A9CAD4D28 /* Pods-RosterBuster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RosterBuster.debug.xcconfig"; path = "Target Support Files/Pods-RosterBuster/Pods-RosterBuster.debug.xcconfig"; sourceTree = "<group>"; };
 		C9157611234F895D005251CF /* RosterBuster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RosterBuster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9157614234F895D005251CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9157616234F895D005251CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,10 @@
 		C915761D234F895F005251CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9157620234F895F005251CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9157622234F895F005251CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C915762E234F8A60005251CF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		C9157630234F8DF6005251CF /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9157634234F9674005251CF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6DE4073E1D6AC6582341599 /* Pods-RosterBuster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RosterBuster.release.xcconfig"; path = "Target Support Files/Pods-RosterBuster/Pods-RosterBuster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3F8EEF517D9799F45BBE21 /* Pods_RosterBuster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +52,8 @@
 			children = (
 				C9157613234F895D005251CF /* RosterBuster */,
 				C9157612234F895D005251CF /* Products */,
+				EB1C82BC6FE2C38EE0755F8B /* Pods */,
+				FD5F6CDC20633FE8CD7D18CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +70,81 @@
 			children = (
 				C9157614234F895D005251CF /* AppDelegate.swift */,
 				C9157616234F895D005251CF /* SceneDelegate.swift */,
-				C9157618234F895D005251CF /* ViewController.swift */,
-				C915761A234F895D005251CF /* Main.storyboard */,
-				C915761D234F895F005251CF /* Assets.xcassets */,
-				C915761F234F895F005251CF /* LaunchScreen.storyboard */,
-				C9157622234F895F005251CF /* Info.plist */,
+				C915762A234F89A5005251CF /* ViewModel */,
+				C9157629234F897F005251CF /* View */,
+				C9157628234F8971005251CF /* Model */,
+				C915762D234F8A32005251CF /* Other */,
+				C9157634234F9674005251CF /* APIManager.swift */,
 			);
 			path = RosterBuster;
+			sourceTree = "<group>";
+		};
+		C9157628234F8971005251CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C915762E234F8A60005251CF /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C9157629234F897F005251CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C915762C234F89DF005251CF /* Controllers */,
+				C915762B234F89C3005251CF /* Storyboards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C915762A234F89A5005251CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C915762B234F89C3005251CF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C915761A234F895D005251CF /* Main.storyboard */,
+				C915761F234F895F005251CF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C915762C234F89DF005251CF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9157618234F895D005251CF /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C915762D234F8A32005251CF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C915761D234F895F005251CF /* Assets.xcassets */,
+				C9157622234F895F005251CF /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		EB1C82BC6FE2C38EE0755F8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30EA4F68847E055A9CAD4D28 /* Pods-RosterBuster.debug.xcconfig */,
+				F6DE4073E1D6AC6582341599 /* Pods-RosterBuster.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FD5F6CDC20633FE8CD7D18CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9157630234F8DF6005251CF /* RealmSwift.framework */,
+				2B82A59752053165CA6BB8CC /* Pods_RosterBuster.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9157625234F895F005251CF /* Build configuration list for PBXNativeTarget "RosterBuster" */;
 			buildPhases = (
+				FF52CC8D75F1E97F3A217BA0 /* [CP] Check Pods Manifest.lock */,
 				C915760D234F895D005251CF /* Sources */,
 				C915760E234F895D005251CF /* Frameworks */,
 				C915760F234F895D005251CF /* Resources */,
+				D3E15084AC8025A6B85AFF88 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +215,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D3E15084AC8025A6B85AFF88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RosterBuster/Pods-RosterBuster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RosterBuster/Pods-RosterBuster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RosterBuster/Pods-RosterBuster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF52CC8D75F1E97F3A217BA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RosterBuster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C915760D234F895D005251CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C915762F234F8A60005251CF /* Event.swift in Sources */,
 				C9157619234F895D005251CF /* ViewController.swift in Sources */,
+				C9157635234F9674005251CF /* APIManager.swift in Sources */,
 				C9157615234F895D005251CF /* AppDelegate.swift in Sources */,
 				C9157617234F895D005251CF /* SceneDelegate.swift in Sources */,
 			);
@@ -282,10 +408,12 @@
 		};
 		C9157626234F895F005251CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30EA4F68847E055A9CAD4D28 /* Pods-RosterBuster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RosterBuster/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RosterBuster/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,10 +427,12 @@
 		};
 		C9157627234F895F005251CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6DE4073E1D6AC6582341599 /* Pods-RosterBuster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RosterBuster/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RosterBuster/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
