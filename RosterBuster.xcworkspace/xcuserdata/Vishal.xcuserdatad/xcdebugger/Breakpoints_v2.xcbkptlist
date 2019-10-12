@@ -3,4 +3,70 @@
    uuid = "44FF8974-B83B-48FF-B86B-9DB172FD5B3B"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "183484F0-1C8E-4CE5-AB9F-74EFFBC6CBCF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RosterBuster/ViewModel/EventViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getEvents()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D46B1400-ED7A-4EE2-A6A7-17C0B2C3504E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RosterBuster/ViewModel/EventViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getEvents()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D46B1400-ED7A-4EE2-A6A7-17C0B2C3504E - 8dfcf94e2174ba85"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;RosterBuster.Event&gt;&gt;) -&gt; () in RosterBuster.EventViewModel.getEvents() -&gt; ()"
+                  moduleName = "RosterBuster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Vishal/Desktop/RosterBuster/RosterBuster/ViewModel/EventViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "450">
+               </Location>
+               <Location
+                  uuid = "D46B1400-ED7A-4EE2-A6A7-17C0B2C3504E - 6dc51535ac807e3d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RosterBuster.Event) -&gt; Swift.Optional&lt;Swift.String&gt; in closure #1 (Swift.Optional&lt;Swift.Array&lt;RosterBuster.Event&gt;&gt;) -&gt; () in RosterBuster.EventViewModel.getEvents() -&gt; ()"
+                  moduleName = "RosterBuster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Vishal/Desktop/RosterBuster/RosterBuster/ViewModel/EventViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

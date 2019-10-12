@@ -10,12 +10,16 @@
 		1F3F8EEF517D9799F45BBE21 /* Pods_RosterBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B82A59752053165CA6BB8CC /* Pods_RosterBuster.framework */; };
 		C9157615234F895D005251CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157614234F895D005251CF /* AppDelegate.swift */; };
 		C9157617234F895D005251CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157616234F895D005251CF /* SceneDelegate.swift */; };
-		C9157619234F895D005251CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157618234F895D005251CF /* ViewController.swift */; };
+		C9157619234F895D005251CF /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157618234F895D005251CF /* EventListViewController.swift */; };
 		C915761C234F895D005251CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C915761A234F895D005251CF /* Main.storyboard */; };
 		C915761E234F895F005251CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C915761D234F895F005251CF /* Assets.xcassets */; };
 		C9157621234F895F005251CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C915761F234F895F005251CF /* LaunchScreen.storyboard */; };
 		C915762F234F8A60005251CF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915762E234F8A60005251CF /* Event.swift */; };
 		C9157635234F9674005251CF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157634234F9674005251CF /* APIManager.swift */; };
+		C94E7AFF2350976800A31442 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E7AFE2350976800A31442 /* AppConstants.swift */; };
+		C94E7B012350DF8600A31442 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E7B002350DF8600A31442 /* EventViewModel.swift */; };
+		C94E7B052350ED0A00A31442 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E7B032350ED0A00A31442 /* EventListCell.swift */; };
+		C94E7B062350ED0A00A31442 /* EventListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94E7B042350ED0A00A31442 /* EventListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +28,7 @@
 		C9157611234F895D005251CF /* RosterBuster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RosterBuster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9157614234F895D005251CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9157616234F895D005251CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9157618234F895D005251CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9157618234F895D005251CF /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		C915761B234F895D005251CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C915761D234F895F005251CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9157620234F895F005251CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +36,10 @@
 		C915762E234F8A60005251CF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C9157630234F8DF6005251CF /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9157634234F9674005251CF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C94E7AFE2350976800A31442 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		C94E7B002350DF8600A31442 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		C94E7B032350ED0A00A31442 /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
+		C94E7B042350ED0A00A31442 /* EventListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListCell.xib; sourceTree = "<group>"; };
 		F6DE4073E1D6AC6582341599 /* Pods-RosterBuster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RosterBuster.release.xcconfig"; path = "Target Support Files/Pods-RosterBuster/Pods-RosterBuster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +83,7 @@
 				C9157628234F8971005251CF /* Model */,
 				C915762D234F8A32005251CF /* Other */,
 				C9157634234F9674005251CF /* APIManager.swift */,
+				C94E7AFE2350976800A31442 /* AppConstants.swift */,
 			);
 			path = RosterBuster;
 			sourceTree = "<group>";
@@ -90,6 +99,7 @@
 		C9157629234F897F005251CF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C94E7B022350ECD600A31442 /* TableViewCells */,
 				C915762C234F89DF005251CF /* Controllers */,
 				C915762B234F89C3005251CF /* Storyboards */,
 			);
@@ -99,6 +109,7 @@
 		C915762A234F89A5005251CF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C94E7B002350DF8600A31442 /* EventViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -115,7 +126,7 @@
 		C915762C234F89DF005251CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C9157618234F895D005251CF /* ViewController.swift */,
+				C9157618234F895D005251CF /* EventListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +138,15 @@
 				C9157622234F895F005251CF /* Info.plist */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		C94E7B022350ECD600A31442 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C94E7B032350ED0A00A31442 /* EventListCell.swift */,
+				C94E7B042350ED0A00A31442 /* EventListCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		EB1C82BC6FE2C38EE0755F8B /* Pods */ = {
@@ -207,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94E7B062350ED0A00A31442 /* EventListCell.xib in Resources */,
 				C9157621234F895F005251CF /* LaunchScreen.storyboard in Resources */,
 				C915761E234F895F005251CF /* Assets.xcassets in Resources */,
 				C915761C234F895D005251CF /* Main.storyboard in Resources */,
@@ -263,9 +284,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C915762F234F8A60005251CF /* Event.swift in Sources */,
-				C9157619234F895D005251CF /* ViewController.swift in Sources */,
+				C94E7AFF2350976800A31442 /* AppConstants.swift in Sources */,
+				C9157619234F895D005251CF /* EventListViewController.swift in Sources */,
 				C9157635234F9674005251CF /* APIManager.swift in Sources */,
+				C94E7B052350ED0A00A31442 /* EventListCell.swift in Sources */,
 				C9157615234F895D005251CF /* AppDelegate.swift in Sources */,
+				C94E7B012350DF8600A31442 /* EventViewModel.swift in Sources */,
 				C9157617234F895D005251CF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

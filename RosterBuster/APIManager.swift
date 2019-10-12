@@ -16,7 +16,7 @@ import Foundation
     
     func getEventData(_ completeion:@escaping ([Event]?)->()){
         let session = URLSession(configuration: URLSessionConfiguration.default)
-        session.dataTask(with: URL(string: "https://www.rosterbuster.aero/wp-content/uploads/dummy-response.json")!) { (data, response, error) in
+        session.dataTask(with: URL(string: APIEndpoints.getEvents)!) { (data, response, error) in
             guard error == nil else{
                 print("Error in fetching event data: \(String(describing: error))")
                 completeion(nil)
