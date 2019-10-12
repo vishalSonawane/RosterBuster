@@ -8,6 +8,14 @@
 
 import Foundation
 
+enum EventType:String {
+    case flight = "flight"
+    case off = "off"
+    case layover = "layover"
+    case standby = "standby"
+    case positioning = "positioning"
+    case undifined
+}
 struct APIEndpoints {
     static let getEvents = "https://www.rosterbuster.aero/wp-content/uploads/dummy-response.json"
 }

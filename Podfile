@@ -7,5 +7,6 @@ target 'RosterBuster' do
 
   # Pods for RosterBuster
 	pod 'RealmSwift'
+  pod 'FontAwesome.swift'
 
 end

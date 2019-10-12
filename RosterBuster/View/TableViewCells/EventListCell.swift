@@ -24,5 +24,9 @@ class EventListCell: UITableViewCell {
         self.lblTiming.text = "timing"
         self.lblMatchCrew.text = "match crew"
         self.lblLayoverLocation.text = "AMS"
+        if let dutyCode = event.dutyCode{
+            self.lblIcon.setIconForEventType(type: EventType(rawValue: dutyCode.lowercased()) ?? EventType.undifined)
+        }
+        
     }
 }

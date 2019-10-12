@@ -20,6 +20,7 @@
 		C94E7B012350DF8600A31442 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E7B002350DF8600A31442 /* EventViewModel.swift */; };
 		C94E7B052350ED0A00A31442 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E7B032350ED0A00A31442 /* EventListCell.swift */; };
 		C94E7B062350ED0A00A31442 /* EventListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94E7B042350ED0A00A31442 /* EventListCell.xib */; };
+		C94E7B082352178800A31442 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E7B072352178800A31442 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C94E7B002350DF8600A31442 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		C94E7B032350ED0A00A31442 /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		C94E7B042350ED0A00A31442 /* EventListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListCell.xib; sourceTree = "<group>"; };
+		C94E7B072352178800A31442 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F6DE4073E1D6AC6582341599 /* Pods-RosterBuster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RosterBuster.release.xcconfig"; path = "Target Support Files/Pods-RosterBuster/Pods-RosterBuster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				C915762D234F8A32005251CF /* Other */,
 				C9157634234F9674005251CF /* APIManager.swift */,
 				C94E7AFE2350976800A31442 /* AppConstants.swift */,
+				C94E7B072352178800A31442 /* Extensions.swift */,
 			);
 			path = RosterBuster;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C915762F234F8A60005251CF /* Event.swift in Sources */,
+				C94E7B082352178800A31442 /* Extensions.swift in Sources */,
 				C94E7AFF2350976800A31442 /* AppConstants.swift in Sources */,
 				C9157619234F895D005251CF /* EventListViewController.swift in Sources */,
 				C9157635234F9674005251CF /* APIManager.swift in Sources */,
