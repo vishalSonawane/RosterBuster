@@ -25,6 +25,61 @@ class Event:Object,Codable{
     @objc dynamic var firstOfficer:String?
     @objc dynamic var flightAttendant:String?
     
+    var sourceToDestinationText:String{
+        guard departure != nil, destination != nil else {
+            return "-"
+        }
+        switch dutyCode?.lowercased() {
+        case "flight":
+             return "\(departure!) - \(destination!)"
+        default:
+            return dutyCode ?? "-"
+        }
+       
+    }
+    var matchCrewText:String{
+       return dutyCode?.lowercased() == "standby" ? "Match Crew" : ""
+    }
+    var layoverLocationText:String{
+        switch dutyCode?.lowercased() {
+        case "flight":
+            return  ""
+        default:
+            return destination ?? ""
+        }
+    }
+    var timeText:String{
+        guard timeArrive != nil,timeDepart != nil,!timeArrive!.isEmpty,!timeDepart!.isEmpty else {
+            return ""
+        }
+        func getTimeString(dutyCode:String) -> String{
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = dutyCode == "layover" ? "HH:mm" : "HH:mm:ss"
+            let time2 = dateFormatter.date(from: timeArrive!)
+            let time1 = dateFormatter.date(from: timeDepart!)
+            guard time1 != nil,time2 != nil else {
+                return ""
+            }
+            if dutyCode == "layover"{
+                let newDate = time1!.addingTimeInterval(time2!.timeIntervalSince1970)
+                let hoursAndMinutes = dateFormatter.string(from: newDate)
+                return "\(hoursAndMinutes) hours"
+            }else{
+                dateFormatter.dateFormat = "HH:mm"
+                let t1 = dateFormatter.string(from: time1!)
+                let t2 = dateFormatter.string(from: time2!)
+                return "\(t1) - \(t2)"
+            }
+            
+        }
+        switch dutyCode?.lowercased() {
+        case "layover":return getTimeString(dutyCode: "layover")
+        case "standby":return getTimeString(dutyCode: "standby")
+        default:
+            return "\(timeDepart ?? "") - \(timeArrive ?? "")"
+        }
+    }
     override class func primaryKey() -> String? {
         return "id"
     }

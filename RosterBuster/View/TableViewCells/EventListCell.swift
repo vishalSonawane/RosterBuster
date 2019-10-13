@@ -18,12 +18,18 @@ class EventListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        lblSourceToDestination.textColor = .black
+        lblLayoverLocation.textColor = .gray
+        lblTiming.textColor = .red
+        lblMatchCrew.textColor = .gray
     }
     func setup(event:Event)  {
-        self.lblSourceToDestination.text = "S - > T"
-        self.lblTiming.text = "timing"
-        self.lblMatchCrew.text = "match crew"
-        self.lblLayoverLocation.text = "AMS"
+        self.lblSourceToDestination.text = event.sourceToDestinationText
+        self.lblTiming.text = event.timeText
+        //Assumption: from the screenshot which was provided, assumption is made that if dutyCode is layover then only show this label
+        self.lblMatchCrew.text = event.matchCrewText
+        self.lblLayoverLocation.text = event.layoverLocationText
+        
         if let dutyCode = event.dutyCode{
             self.lblIcon.setIconForEventType(type: EventType(rawValue: dutyCode.lowercased()) ?? EventType.undifined)
         }
