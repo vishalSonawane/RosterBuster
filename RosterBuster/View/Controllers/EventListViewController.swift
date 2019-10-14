@@ -23,7 +23,7 @@ class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.addSubview(self.refreshControl)
-        eventViewModel.getEvents()
+        handleInternetConnectivity()
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         eventViewModel.tableViewReloadCallback = {[unowned self] in
             OperationQueue.main.addOperation {
@@ -31,16 +31,30 @@ class EventListViewController: UIViewController {
                 self.refreshControl.endRefreshing()
             }
         }
+        
+    }
+    func handleInternetConnectivity(){
+        OperationQueue.main.addOperation {
+            NetworkManager.isReachable(completed: { [unowned self] status in
+                self.eventViewModel.getEvents()
+            })
+            NetworkManager.isUnreachable(completed:  { [unowned self] status in
+                self.eventViewModel.getEventsFromDB()
+            })
+        }
+        
     }
     @objc func refreshEvents(){
-        eventViewModel.getEvents()
+        NetworkManager.isReachable { [unowned self] _ in
+            self.eventViewModel.getEvents()
+        }
+        
     }
-
 }
 
 extension EventListViewController:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return eventViewModel.eventDataSource?.keys.count ?? 0
+        return eventViewModel.eventDataSource?.count ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard eventViewModel.eventDataSource != nil else {

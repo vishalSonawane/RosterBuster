@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-RosterBuster/Pods-RosterBuster-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework
+${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
 ${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework

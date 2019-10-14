@@ -8,13 +8,14 @@
 
 import Foundation
 
+
 typealias TableViewReloadCallback = ()->()
 
 class EventViewModel {
     
     var tableViewReloadCallback:TableViewReloadCallback?
     
-    var eventDataSource:[String?:[Event]]? {
+    var eventDataSource:[(key: String?, value: [Event])]?{//[String?:[Event]]? {
        didSet{
             tableViewReloadCallback?()
         }
@@ -31,9 +32,44 @@ class EventViewModel {
                 self.tableViewReloadCallback?()
                 return
             }
-            //self.events = events
+            self.eventDataSource?.removeAll()
+            OperationQueue.main.addOperation {
+                Event.deleteAllStoredEvents { (success) in
+                    //save events
+                    for event in events!{
+                        event.save()
+                    }
+                }
+                
+            }
+            
             let groupedEvents = Dictionary(grouping: events!, by: { $0.date})
-            self.eventDataSource = groupedEvents
+            let arr = groupedEvents.sorted { (tuple1, tuple2) -> Bool in
+                guard self.dateForSorting(dateString: tuple1.key) != nil,self.dateForSorting(dateString: tuple2.key) != nil else {return false}
+                return self.dateForSorting(dateString: tuple1.key)! < self.dateForSorting(dateString: tuple2.key)!
+            }
+            self.eventDataSource = arr
+        }
+    }
+    func dateForSorting(dateString:String?)->Date?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/mm/yyyy"
+        let date1 = dateFormatter.date(from: dateString ?? "")
+        return date1
+    }
+    //In offline mode get saved events
+    func getEventsFromDB(){
+        self.eventDataSource?.removeAll()
+        if let savedEvents = Event.getAllStoredEvents(){
+            let groupedEvents = Dictionary(grouping: savedEvents, by: { $0.date})
+            let arr = groupedEvents.sorted { (tuple1, tuple2) -> Bool in
+                guard self.dateForSorting(dateString: tuple1.key) != nil,self.dateForSorting(dateString: tuple2.key) != nil else {return false}
+                return self.dateForSorting(dateString: tuple1.key)! < self.dateForSorting(dateString: tuple2.key)!
+            }
+            self.eventDataSource = arr
+        }else{
+            print("No saved events found..")
+            self.tableViewReloadCallback?()
         }
     }
     

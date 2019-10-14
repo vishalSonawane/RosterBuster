@@ -25,6 +25,27 @@ class Event:Object,Codable{
     @objc dynamic var firstOfficer:String?
     @objc dynamic var flightAttendant:String?
     
+    override class func primaryKey() -> String? {
+           return "id"
+       }
+       
+       enum CodingKeys:String,CodingKey {
+           case flightnr = "Flightnr"
+           case date = "Date"
+           case aircraftType = "Aircraft Type"
+           case tail = "Tail"
+           case departure = "Departure"
+           case destination = "Destination"
+           case timeDepart = "Time_Depart"
+           case timeArrive = "Time_Arrive"
+           case dutyID = "DutyID"
+           case dutyCode = "DutyCode"
+           case captain = "Captain"
+           case firstOfficer = "First Officer"
+           case flightAttendant = "Flight Attendant"
+           
+       }
+    
     var sourceToDestinationText:String{
         guard departure != nil, destination != nil else {
             return "-"
@@ -80,46 +101,43 @@ class Event:Object,Codable{
             return "\(timeDepart ?? "") - \(timeArrive ?? "")"
         }
     }
-    override class func primaryKey() -> String? {
-        return "id"
-    }
-    
-    enum CodingKeys:String,CodingKey {
-        case flightnr = "Flightnr"
-        case date = "Date"
-        case aircraftType = "Aircraft Type"
-        case tail = "Tail"
-        case departure = "Departure"
-        case destination = "Destination"
-        case timeDepart = "Time_Depart"
-        case timeArrive = "Time_Arrive"
-        case dutyID = "DutyID"
-        case dutyCode = "DutyCode"
-        case captain = "Captain"
-        case firstOfficer = "First Officer"
-        case flightAttendant = "Flight Attendant"
-        
-    }
-    
+}
+// Mark:- DB Operations
+extension Event{
     //Save Event object
-    func save(){
-        do {
-            let realm = try Realm()
-            try realm.write{
-                realm.add(self, update: .all)
-            }
-        } catch  {
-            print("Error while savng events \(error)")
-        }
-    }
-    //Get all saved Event objects
-    static func getAllStoredEvents() -> [Event]?{
-        do {
-            let realm = try Realm()
-            return Array(realm.objects(Event.self))
-        } catch  {
-            print("Error while savng events \(error)")
-            return nil
-        }
-    }
+      func save(){
+          do {
+              let realm = try Realm()
+              try realm.write{
+                  realm.add(self, update: .all)
+              }
+          } catch  {
+              print("Error while savng events \(error)")
+          }
+      }
+      //Get all saved Event objects
+      static func getAllStoredEvents() -> [Event]?{
+          do {
+              let realm = try Realm()
+              return Array(realm.objects(Event.self))
+          } catch  {
+              print("Error while saving events \(error)")
+              return nil
+          }
+      }
+      //Delete all saved Event objects
+      static func deleteAllStoredEvents(completion:(Bool)->()){
+          if let savedObjects = Event.getAllStoredEvents(){
+              do {
+                  let realm = try Realm()
+                  try realm.write {
+                      realm.delete(savedObjects)
+                  }
+                  completion(true)
+              } catch  {
+                  print("Error while deleting all events \(error)")
+                  completion(false)
+              }
+          }
+      }
 }
