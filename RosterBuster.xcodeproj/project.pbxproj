@@ -22,6 +22,7 @@
 		C94E7B062350ED0A00A31442 /* EventListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94E7B042350ED0A00A31442 /* EventListCell.xib */; };
 		C94E7B082352178800A31442 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94E7B072352178800A31442 /* Extensions.swift */; };
 		C9C7ACAB235444FB00B1DA0D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7ACAA235444FB00B1DA0D /* NetworkManager.swift */; };
+		C9C7ACAE2354569C00B1DA0D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7ACAD2354569C00B1DA0D /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C94E7B042350ED0A00A31442 /* EventListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListCell.xib; sourceTree = "<group>"; };
 		C94E7B072352178800A31442 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9C7ACAA235444FB00B1DA0D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C9C7ACAD2354569C00B1DA0D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F6DE4073E1D6AC6582341599 /* Pods-RosterBuster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RosterBuster.release.xcconfig"; path = "Target Support Files/Pods-RosterBuster/Pods-RosterBuster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,9 +88,7 @@
 				C9157629234F897F005251CF /* View */,
 				C9157628234F8971005251CF /* Model */,
 				C915762D234F8A32005251CF /* Other */,
-				C9157634234F9674005251CF /* APIManager.swift */,
-				C94E7AFE2350976800A31442 /* AppConstants.swift */,
-				C94E7B072352178800A31442 /* Extensions.swift */,
+				C9C7ACAC2354568500B1DA0D /* SupportingFiles */,
 			);
 			path = RosterBuster;
 			sourceTree = "<group>";
@@ -141,7 +141,6 @@
 			children = (
 				C915761D234F895F005251CF /* Assets.xcassets */,
 				C9157622234F895F005251CF /* Info.plist */,
-				C9C7ACAA235444FB00B1DA0D /* NetworkManager.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -153,6 +152,18 @@
 				C94E7B042350ED0A00A31442 /* EventListCell.xib */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		C9C7ACAC2354568500B1DA0D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C9157634234F9674005251CF /* APIManager.swift */,
+				C94E7AFE2350976800A31442 /* AppConstants.swift */,
+				C94E7B072352178800A31442 /* Extensions.swift */,
+				C9C7ACAA235444FB00B1DA0D /* NetworkManager.swift */,
+				C9C7ACAD2354569C00B1DA0D /* Utilities.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		EB1C82BC6FE2C38EE0755F8B /* Pods */ = {
@@ -291,6 +302,7 @@
 			files = (
 				C915762F234F8A60005251CF /* Event.swift in Sources */,
 				C94E7B082352178800A31442 /* Extensions.swift in Sources */,
+				C9C7ACAE2354569C00B1DA0D /* Utilities.swift in Sources */,
 				C9C7ACAB235444FB00B1DA0D /* NetworkManager.swift in Sources */,
 				C94E7AFF2350976800A31442 /* AppConstants.swift in Sources */,
 				C9157619234F895D005251CF /* EventListViewController.swift in Sources */,

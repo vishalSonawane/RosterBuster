@@ -9,5 +9,6 @@ target 'RosterBuster' do
 	pod 'RealmSwift'
   pod 'FontAwesome.swift'
   pod 'ReachabilitySwift'
+  pod 'SVProgressHUD'
 
 end
