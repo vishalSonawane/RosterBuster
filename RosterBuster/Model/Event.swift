@@ -33,7 +33,7 @@ class Event:Object,Codable{
         case "flight":
              return "\(departure!) - \(destination!)"
         default:
-            return dutyCode ?? "-"
+            return dutyCode?.capitalized ?? "-"
         }
        
     }

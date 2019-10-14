@@ -12,17 +12,29 @@ class EventListViewController: UIViewController {
     var eventViewModel = EventViewModel()
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "EventListCell"
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:#selector(refreshEvents),for: .valueChanged)
+        refreshControl.tintColor = UIColor.red
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.addSubview(self.refreshControl)
         eventViewModel.getEvents()
         tableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         eventViewModel.tableViewReloadCallback = {[unowned self] in
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
     }
-
+    @objc func refreshEvents(){
+        eventViewModel.getEvents()
+    }
 
 }
 

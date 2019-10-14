@@ -22,6 +22,7 @@ class EventListCell: UITableViewCell {
         lblLayoverLocation.textColor = .gray
         lblTiming.textColor = .red
         lblMatchCrew.textColor = .gray
+        selectionStyle = .none
     }
     func setup(event:Event)  {
         self.lblSourceToDestination.text = event.sourceToDestinationText
