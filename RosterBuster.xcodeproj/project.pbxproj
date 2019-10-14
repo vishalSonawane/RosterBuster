@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F3F8EEF517D9799F45BBE21 /* Pods_RosterBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B82A59752053165CA6BB8CC /* Pods_RosterBuster.framework */; };
+		C914D36C2354D7BC002FDA8F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914D36B2354D7BC002FDA8F /* EventDetailsViewController.swift */; };
 		C9157615234F895D005251CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157614234F895D005251CF /* AppDelegate.swift */; };
 		C9157617234F895D005251CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157616234F895D005251CF /* SceneDelegate.swift */; };
 		C9157619234F895D005251CF /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9157618234F895D005251CF /* EventListViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		2B82A59752053165CA6BB8CC /* Pods_RosterBuster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RosterBuster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EA4F68847E055A9CAD4D28 /* Pods-RosterBuster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RosterBuster.debug.xcconfig"; path = "Target Support Files/Pods-RosterBuster/Pods-RosterBuster.debug.xcconfig"; sourceTree = "<group>"; };
+		C914D36B2354D7BC002FDA8F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		C9157611234F895D005251CF /* RosterBuster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RosterBuster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9157614234F895D005251CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9157616234F895D005251CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C9157618234F895D005251CF /* EventListViewController.swift */,
+				C914D36B2354D7BC002FDA8F /* EventDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C914D36C2354D7BC002FDA8F /* EventDetailsViewController.swift in Sources */,
 				C915762F234F8A60005251CF /* Event.swift in Sources */,
 				C94E7B082352178800A31442 /* Extensions.swift in Sources */,
 				C9C7ACAE2354569C00B1DA0D /* Utilities.swift in Sources */,

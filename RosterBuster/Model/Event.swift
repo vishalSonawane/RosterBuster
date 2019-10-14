@@ -51,7 +51,7 @@ class Event:Object,Codable{
             return "-"
         }
         switch dutyCode?.lowercased() {
-        case "flight":
+        case DutyCodeStrings.flight:
              return "\(departure!) - \(destination!)"
         default:
             return dutyCode?.capitalized ?? "-"
@@ -59,11 +59,11 @@ class Event:Object,Codable{
        
     }
     var matchCrewText:String{
-       return dutyCode?.lowercased() == "standby" ? "Match Crew" : ""
+        return dutyCode?.lowercased() == DutyCodeStrings.standby ? Messages.matchCrew : ""
     }
     var layoverLocationText:String{
         switch dutyCode?.lowercased() {
-        case "flight":
+        case DutyCodeStrings.flight:
             return  ""
         default:
             return destination ?? ""
@@ -76,13 +76,13 @@ class Event:Object,Codable{
         func getTimeString(dutyCode:String) -> String{
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = dutyCode == "layover" ? "HH:mm" : "HH:mm:ss"
+            dateFormatter.dateFormat = dutyCode == DutyCodeStrings.layover ? "HH:mm" : "HH:mm:ss"
             let time2 = dateFormatter.date(from: timeArrive!)
             let time1 = dateFormatter.date(from: timeDepart!)
             guard time1 != nil,time2 != nil else {
                 return ""
             }
-            if dutyCode == "layover"{
+            if dutyCode == DutyCodeStrings.layover{
                 let newDate = time1!.addingTimeInterval(time2!.timeIntervalSince1970)
                 let hoursAndMinutes = dateFormatter.string(from: newDate)
                 return "\(hoursAndMinutes) hours"
@@ -95,8 +95,8 @@ class Event:Object,Codable{
             
         }
         switch dutyCode?.lowercased() {
-        case "layover":return getTimeString(dutyCode: "layover")
-        case "standby":return getTimeString(dutyCode: "standby")
+        case DutyCodeStrings.layover:return getTimeString(dutyCode: DutyCodeStrings.layover)
+        case DutyCodeStrings.standby:return getTimeString(dutyCode: DutyCodeStrings.standby)
         default:
             return "\(timeDepart ?? "") - \(timeArrive ?? "")"
         }

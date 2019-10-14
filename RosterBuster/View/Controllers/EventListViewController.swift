@@ -12,7 +12,7 @@ class EventListViewController: UIViewController {
     var eventViewModel = EventViewModel()
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "EventListCell"
-    private var finishedLoadingInitialTableCells = false
+    
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:#selector(refreshEvents),for: .valueChanged)
@@ -37,7 +37,7 @@ class EventListViewController: UIViewController {
     func handleInternetConnectivity(){
         OperationQueue.main.addOperation {
             NetworkManager.isReachable(completed: { [unowned self] status in
-                Utilities.showLoader(message: "Geting event details..")
+                Utilities.showLoader(message: Messages.loadingEvents)
                 self.eventViewModel.getEvents()
             })
             NetworkManager.isUnreachable(completed:  { [unowned self] status in
@@ -73,21 +73,13 @@ extension EventListViewController:UITableViewDelegate,UITableViewDataSource{
         cell.setup(event: event)
         return cell
     }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !finishedLoadingInitialTableCells {
-            finishedLoadingInitialTableCells = true
-        }
-            //animates the cell as it is being displayed for the first time
-            cell.transform = CGAffineTransform(translationX: 0, y: 50)
-            cell.alpha = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.05*Double(indexPath.row), options: [.curveEaseInOut], animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-                cell.alpha = 1
-            }, completion: nil)
-        }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Show details vc
+        let selectedEvent =  Array(eventViewModel.eventDataSource!)[indexPath.section].value[indexPath.row]
+        let detailsVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EventDetailsViewController") as! EventDetailsViewController
+        detailsVC.event = selectedEvent
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+        
     }
 }

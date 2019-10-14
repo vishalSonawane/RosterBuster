@@ -19,3 +19,14 @@ enum EventType:String {
 struct APIEndpoints {
     static let getEvents = "https://www.rosterbuster.aero/wp-content/uploads/dummy-response.json"
 }
+struct Messages {
+    static let loadingEvents = "Geting event details.."
+    static let matchCrew  = "Match Crew"
+}
+struct DutyCodeStrings {
+    static let layover = "layover"
+    static let off = "off"
+    static let standby = "standby"
+    static let positioning = "positioning"
+    static let flight = "flight"
+}
