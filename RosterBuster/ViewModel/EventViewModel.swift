@@ -15,7 +15,7 @@ class EventViewModel {
     
     var tableViewReloadCallback:TableViewReloadCallback?
     
-    var eventDataSource:[(key: String?, value: [Event])]?{//[String?:[Event]]? {
+    var eventDataSource:[(key: String?, value: [Event])]?{ 
        didSet{
             tableViewReloadCallback?()
         }
